@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Directory</title>
+    <style>
+        :root {
+            --primary: #3f51b5;
+            --primary-dark: #303f9f;
+            --accent: #009688;
+            --danger: #e53935;
+            --purple: #673ab7;
+            --light-bg: #f0f2f5;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 2rem;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .add-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        form input[type="text"] {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        table {
+            width: 95%;
+            max-width: 1100px;
+            border-collapse: collapse;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        thead {
+            background-color: #f5f5f5;
+            position: sticky;
+            top: 0;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .action-btn {
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0 3px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .update-btn {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .delete-btn {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        .details-btn {
+            background-color: var(--purple);
+            color: white;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 1rem;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                padding: 10px;
+            }
+
+            td {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.75rem 1rem;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                color: #555;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Employee Directory</h1>
+
+    <!-- ✅ FILTER FORM -->
+    <form th:action="@{/employees/department}" method="get" style="margin-bottom: 1rem;">
+        <input type="text" name="dept" placeholder="Enter department" required />
+        <button type="submit" class="add-btn" style="margin-left: 8px;">Filter</button>
+    </form>
+
+    <!-- ✅ ADD EMPLOYEE -->
+    <a th:href="@{/employee/add}">
+        <button class="add-btn">+ Add Employee</button>
+    </a>
+
+    <!-- ✅ EMPLOYEE TABLE -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Designation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${employees}">
+                <td data-label="ID" th:text="${employee.id}">1</td>
+                <td data-label="Name" th:text="${employee.name}">Name</td>
+                <td data-label="Email" th:text="${employee.email}">email@example.com</td>
+                <td data-label="Department" th:text="${employee.department}">Department</td>
+                <td data-label="Designation" th:text="${employee.designation}">Designation</td>
+                <td data-label="Actions">
+                    <a th:href="@{'/employee/update/' + ${employee.id}}">
+                        <button class="action-btn update-btn">Update</button>
+                    </a>
+                    <a th:href="@{'/employee/delete/' + ${employee.id}}">
+                        <button class="action-btn delete-btn">Delete</button>
+                    </a>
+                    <a th:href="@{'/employee/' + ${employee.id}}">
+                        <button class="action-btn details-btn">Details</button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

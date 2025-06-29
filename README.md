@@ -70,14 +70,6 @@ mvn spring-boot:run
 
 <br>
 
-<!-- STATISTICS & METRICS -->
-## 📊 Statistics & Metrics
-| Metric             | Value                 |
-|--------------------|-----------------------|
-| **Stars**          | ![GitHub Stars](https://img.shields.io/github/stars/Shreyansh9016/EmployeeDirectory?style=flat-square) |
-| **Forks**          | ![GitHub Forks](https://img.shields.io/github/forks/Shreyansh9016/EmployeeDirectory?style=flat-square) |
-| **Contributors**   | ![GitHub Contributors](https://img.shields.io/github/contributors/Shreyansh9016/EmployeeDirectory?style=flat-square) |
-| **Open Issues**    | ![GitHub Issues](https://img.shields.io/github/issues/Shreyansh9016/EmployeeDirectory?style=flat-square) |
 
 <br>
 
@@ -90,12 +82,6 @@ mvn spring-boot:run
 - **Maven**
 
 <br>
-
-<!-- DETAILED DOCUMENTATION -->
-## 📖 Detailed Documentation
-- [Installation Guide](link-to-installation-guide)
-- [Configuration Options](link-to-configuration-options)
-- [API Documentation](link-to-api-documentation)
 
 ### Usage Example
 ```java
@@ -124,21 +110,9 @@ public class EmployeeDirectoryApplication {
 - Run `mvn clean install`.
 - Follow the quick start guide to run the application.
 
-### Code of Conduct
-Please read the [Code of Conduct](link-to-code-of-conduct) before contributing.
-
-<br>
-
-<!-- LICENSE & CREDITS -->
-## 📄 License & Credits
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Shreyansh9016/EmployeeDirectory/blob/main/LICENSE) file for details.
-
-### Acknowledgments
-- Thank you to our contributors for their support and collaboration.
-- Special thanks to [Shreyansh9016](https://github.com/Shreyansh9016) for creating this project.
 
 ### Contact
-For any questions or feedback, please contact [Shreyansh9016](mailto:shreyansh9016@example.com).
+For any questions or feedback, please contact [ShreyanshSingh](mailto:meeshreyanshsingh@example.com).
 
 <br>
 ```

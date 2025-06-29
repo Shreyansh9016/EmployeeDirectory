@@ -1,7 +1,7 @@
 <!-- AMAZING ANIMATED HEADER -->
 <div align="center">
   <a href="https://github.com/Shreyansh9016/EmployeeDirectory">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F70000&width=435&lines=EmployeeDirectory;Spring+Boot+%2B+HTML+CSS+%2B+PostGreSQL;Made+with+Love+by+Shreyansh9016" alt="Typing SVG">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F70000&width=435&lines=EmployeeDirectory;Spring+Boot+%2B+HTML+CSS+%2B+PostGreSQL;Made+with+Love+by+Shreyansh" alt="Typing SVG">
   </a>
 </div>
 
